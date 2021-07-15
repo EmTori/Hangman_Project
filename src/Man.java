@@ -63,7 +63,7 @@ public class Man {
         System.out.println("Score 6:");
         System.out.println("   +------+");
         System.out.println("   |      |");
-        System.out.println("   |     (ӧ)");
+        System.out.println("   |     (Ӧ)");
         System.out.println("   |     /|\\");
         System.out.println("   |      |");
         System.out.println("   |");
@@ -73,7 +73,7 @@ public class Man {
         System.out.println("Score 7:");
         System.out.println("   +------+");
         System.out.println("   |      |");
-        System.out.println("   |     (ӧ)");
+        System.out.println("   |     (Ӧ)");
         System.out.println("   |     /|\\");
         System.out.println("   |      |");
         System.out.println("   |     /");
@@ -83,7 +83,7 @@ public class Man {
         System.out.println("Score 8:");
         System.out.println("   +------+");
         System.out.println("   |      |");
-        System.out.println("   |     (ӧ)");
+        System.out.println("   |     (Ӧ)");
         System.out.println("   |     /|\\");
         System.out.println("   |      |");
         System.out.println("   |     / \\");
@@ -93,7 +93,7 @@ public class Man {
         System.out.println("Score 8:");
         System.out.println("   +------+");
         System.out.println("   |      |");
-        System.out.println("   |     (Ӧ)");
+        System.out.println("   |     (X)");
         System.out.println("   |     /|\\");
         System.out.println("   |      |");
         System.out.println("   |     / \\");
