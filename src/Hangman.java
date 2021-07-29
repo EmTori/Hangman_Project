@@ -1,20 +1,24 @@
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.lang.constant.Constable;
+import java.util.Scanner; // Import the Scanner class to read text files
 public class Hangman {
-    private static String[] wordBank = {"terminator", "Baby", "Hello", "Tent", "banana"};
-    private static String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
+    //private static String[] wordBank = {"terminator", "Baby", "Hello", "Tent", "banana"};
+    //private static String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
     private static int wrongGuesses = 0;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner inputDevice = new Scanner(System.in);
-        int wordLength = randomWord.length();
-        char[] wordToGuessChars = randomWord.toCharArray();
-        char[] censor = randomWord.toCharArray();
 
         //Hangman game introduction
         System.out.println("——————————————————————————————————————————————");
         drawHangman();
         System.out.println("——————————————————————————————————————————————");
 
-        gameDifficulty(inputDevice);
+        String randomWord = (String) gameDifficulty(inputDevice);
+        int wordLength = randomWord.length();
+        char[] wordToGuessChars = randomWord.toCharArray();
+        char[] censor = randomWord.toCharArray();
+
+        //gameDifficulty(inputDevice);
 
         System.out.println("——————————————————————————————————————————————");
 
@@ -36,7 +40,8 @@ public class Hangman {
 
     }
 
-    public static void gameDifficulty(Scanner inputDevice){
+    public static Constable gameDifficulty(Scanner inputDevice) throws FileNotFoundException {
+        String fileName = "";
         System.out.println("Please choose a game difficulty:");
         System.out.println("| [1] Easy | [2] Medium | [3] Hard |");
         System.out.print(">>> ");
@@ -44,16 +49,26 @@ public class Hangman {
 
         if( gameMode == 1 ){
             System.out.println("You chose... Easy Difficulty.");
+            String[] wordBank = {"easy", "Baby", "Hello"};
+            String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
+            return randomWord;
         }
         else if( gameMode == 2 ){
             System.out.println("You chose... Medium Difficulty.");
+            String[] wordBank = {"Medium", "Banana", "Summer"};
+            String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
+            return randomWord;
         }
         else if( gameMode == 3 ){
             System.out.println("You chose... Hard Difficulty.");
+            String[] wordBank = {"Hard", "Terminator", "Secretary"};
+            String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
+            return randomWord;
         }
         else{
             System.out.println(gameMode+ " is not a proper input. Please try again");
         }
+        return null;
     }
 
     public static void drawHangman(){
