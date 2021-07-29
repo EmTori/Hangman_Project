@@ -47,26 +47,36 @@ public class Hangman {
         System.out.print(">>> ");
         int gameMode = inputDevice.nextInt();
 
-        if( gameMode == 1 ){
-            System.out.println("You chose... Easy Difficulty.");
-            String[] wordBank = {"easy", "Baby", "Hello"};
-            String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
-            return randomWord;
-        }
-        else if( gameMode == 2 ){
-            System.out.println("You chose... Medium Difficulty.");
-            String[] wordBank = {"Medium", "Banana", "Summer"};
-            String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
-            return randomWord;
-        }
-        else if( gameMode == 3 ){
-            System.out.println("You chose... Hard Difficulty.");
-            String[] wordBank = {"Hard", "Terminator", "Secretary"};
-            String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
-            return randomWord;
-        }
-        else{
-            System.out.println(gameMode+ " is not a proper input. Please try again");
+        while( gameMode != 1 || gameMode != 2 || gameMode != 3 ){
+            if( gameMode == 1 ){
+                System.out.println("You chose... Easy Difficulty.");
+                String[] wordBank = {"Cat", "Able", "Acid", "Baby", "Cow", "Dirt", "Dog", "Fear", "Meat", "Sun", "You", "Water", "Art", "Lost", "Cold", "Warm", "King", "Sea", "Joy", "Team", "Green", "Book", "Week", "Star", "Heart", "Worm", "Year", "Wind", "Rat", "Dead"};
+                String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
+                return randomWord;
+            }
+            else if( gameMode == 2 ){
+                System.out.println("You chose... Medium Difficulty.");
+                String[] wordBank = {"Normal", "Because", "Weather", "Tomorrow", "Together", "School", "Respect", "Public", "Needle", "Animal", "Beautiful", "Detail", "Event", "Garden",
+                        "Meeting", "Example", "Feather", "Glove", "Hammer", "Level", "Agree", "World", "Relief", "Theater", "Medical", "Sugar", "Potato", "Round", "Public", "Leave"};
+                String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
+                return randomWord;
+            }
+            else if( gameMode == 3 ){
+                System.out.println("You chose... Hard Difficulty.");
+                String[] wordBank = {"Subway", "Abyss", "Transcript", "Microwave", "Blizzard", "Stronghold", "Joking", "Dwarves", "Klutz", "Squawk", "Youthful", "Zodiac", "Government", "Harmony", "Structure", "Nymph", "Vaporize",
+                        "Mnemonic", "Pixel", "Wizard", "Advertisement", "Competition", "Observation", "Jigsaw", "Representative", "Fashionable", "Amusement", "Adjustment", "Bandwagon", "Wyvern"};
+                String randomWord = wordBank[(int) (Math.random() * wordBank.length)];
+                return randomWord;
+            }
+            else{
+                System.out.println(gameMode+ " is not a proper input. Please try again.");
+                System.out.println("——————————————————————————————————————————————");
+                System.out.println("Please choose a game difficulty:");
+                System.out.println("| [1] Easy | [2] Medium | [3] Hard |");
+                System.out.print(">>> ");
+                gameMode = inputDevice.nextInt();
+                continue;
+            }
         }
         return null;
     }
