@@ -41,7 +41,6 @@ public class Hangman {
     }
 
     public static Constable gameDifficulty(Scanner inputDevice) throws FileNotFoundException {
-        String fileName = "";
         System.out.println("Please choose a game difficulty:");
         System.out.println("| [1] Easy | [2] Medium | [3] Hard |");
         System.out.print(">>> ");
@@ -86,6 +85,7 @@ public class Hangman {
         if( wrongGuesses == 0 ){
             System.out.println("Welcome to Hangman");
             System.out.println("——————————————————");
+            System.out.println();
             System.out.println("     +------+");
             System.out.println("     |");
             System.out.println("     |");
@@ -169,6 +169,7 @@ public class Hangman {
         //Wrong guess #6
         if( wrongGuesses == 6 ){
             System.out.println("Wrong guess, please guess a new letter.");
+            System.out.println();
             System.out.println("     +------+");
             System.out.println("     |      |");
             System.out.println("     |     (Ӧ)");
@@ -195,12 +196,12 @@ public class Hangman {
 
         //Wrong guess #8, Game over.
         if( wrongGuesses == 8 ){
-            System.out.println("Wrong guess, Game Over.");
+            System.out.println("Wrong guess.");
             System.out.println();
             System.out.println("     +------+");
             System.out.println("     |      |");
-            System.out.println("     |     (X)");
-            System.out.println("     |     /|\\");
+            System.out.println("     |     (X)             GAME OVER  ");
+            System.out.println("     |     /|\\            ———————————");
             System.out.println("     |      |");
             System.out.println("     |     / \\");
             System.out.println("    _|_");
