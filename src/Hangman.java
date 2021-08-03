@@ -18,13 +18,12 @@ public class Hangman {
         char[] wordToGuessChars = randomWord.toCharArray();
         char[] censor = randomWord.toCharArray();
 
-        //gameDifficulty(inputDevice);
-
         System.out.println("——————————————————————————————————————————————");
 
         System.out.println("Your mystery word is:");
-        System.out.println(randomWord);
+        //System.out.println(randomWord);                //Shows the player the mystery word, for testing purposes.
 
+        //Print out the word in '_'
         for (int i = 0; i < wordLength; i++) {
             censor[i] = '_';
         }
@@ -34,10 +33,16 @@ public class Hangman {
         }
         System.out.println();
 
+        //Guess a letter
         System.out.println("Guess a letter");
         System.out.print(">>> ");
         char playerGuess = inputDevice.next().toLowerCase().substring(0, 1).charAt(0);
 
+        //Test all hangman drawings
+        for( int i = 0; i < 8; i++ ){
+            wrongGuesses++;
+            drawHangman();
+        }
     }
 
     public static Constable gameDifficulty(Scanner inputDevice) throws FileNotFoundException {
